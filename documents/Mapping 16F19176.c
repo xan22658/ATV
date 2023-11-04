@@ -1,0 +1,58 @@
+/*
+ * File:   Mapping
+ * Author: Romain
+ *
+ * Created on 03/11/2023
+*/
+ 
+/*
+* Mapping des pin
+*
+* IN :
+* DTMF 1 RD1 20
+* DTMF 2 RD0 19
+* DTMF 3 RC2 17
+* DTMF 4 RC1 16
+* DTMF EN RC0 15
+* ADC Urms RD4 27
+* ADC Irms RD5 28
+* ADC Temp RD6 29
+*
+* OUT :
+* PTT VHF RA0 2
+* PTT UHF RA1 3
+* Watchdog RA2 4
+* FAN RA3 5
+* TX1G2 RA4 6
+* TX2G4 RA5 7
+* TX10G-1 RB0 33
+* TX10G-2 RB1 34
+* TXDATV RB2 35
+* SD RB3 36
+* AUX1 RB4 37
+* AUX2 RB5 38
+* AUX3 RE0 8
+*
+* PWM :
+* BIP RD7 30
+*
+* COM :
+* TX1  RC6 25
+* RX1 RC7 26
+* TX2 RD2 21
+* RX2 RD3 22 
+* SDA RC4 23
+* SCL RC3 18
+*
+* ICSP :
+* MCLR RE3 1
+* ICSPCLK RB6 39
+* ICSPDAT RB7 40
+*
+* POWER :
+* VDD 11 32
+* VSS 12 31
+*
+
+
+*/
