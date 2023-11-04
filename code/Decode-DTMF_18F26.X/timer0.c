@@ -15,15 +15,7 @@ extern Uint8_t ui8Compteur; // Variable Compteur pour Timer0
 void TMR0_Initialize(void) // Configuration du Timer0 
 {
     /**********************TIMER 0 INIT*******************************************/
-	INTCON0bits.GIEH = 0;
-    INTCON0bits.GIEL = 0;
-    INTCON0bits.IPEN = 0;
-    IVTBASEU = 0x00;
-    IVTBASEH = 0x00;
-    IVTBASEL = 0x08;
-    INTCON0bits.GIEH = 1;
-    INTCON0bits.GIEL = 1;
-    INTCON0bits.IPEN = 1;
+
 
     /*Configure the timer to call App_Private_Cmd_Execute_Periodic_Task each 20ms*/
     T0CON0bits.EN = 0;

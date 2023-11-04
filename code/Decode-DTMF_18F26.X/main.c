@@ -26,7 +26,17 @@ Uint8_t test = 0;
 Uint32_t Temperature = 0;
 Uint32_t test_temp = 0;
 
-void main(void) {
+void main(void) 
+{
+    INTCON0bits.GIEH = 0;
+    INTCON0bits.GIEL = 0;
+    INTCON0bits.IPEN = 0;
+    IVTBASEU = 0x00;
+    IVTBASEH = 0x00;
+    IVTBASEL = 0x08;
+    INTCON0bits.GIEH = 1;
+    INTCON0bits.GIEL = 1;
+    INTCON0bits.IPEN = 1;
     
 InitSysteme(); 
 
@@ -65,16 +75,16 @@ void InitSysteme(void)
 TRISBbits.TRISB4 = 0; // Port LED en sortie
 TRISBbits.TRISB5 = 0; // Port LED en sortie
 
-void LED_DTMF_LightOn();
-void LED_DTMFOK_LightOn();
+LED_DTMF_LightOn();
+LED_DTMFOK_LightOn();
 
 TMR0_Initialize();      // Initialisation du Timer0
 Drv_Adc_Configure();    // Initialisation ADC 
 dtmf_Configure();     // Initialisation DTMF
 dtmf_InitInterrupt();
 
-void LED_DTMF_LightOff();
-void LED_DTMFOK_LightOff();
+LED_DTMF_LightOff();
+LED_DTMFOK_LightOff();
 
     
 }

@@ -36256,7 +36256,7 @@ Uint32_t Drv_Adc_Read_Temp_Ext(void);
 # 12 "main.c" 2
 
 # 1 "./dtmf.h" 1
-# 14 "./dtmf.h"
+# 19 "./dtmf.h"
 void dtmf_Configure(void);
 
 
@@ -36278,10 +36278,20 @@ Uint8_t test = 0;
 Uint32_t Temperature = 0;
 Uint32_t test_temp = 0;
 
-void main(void) {
+void main(void)
+{
+    INTCON0bits.GIEH = 0;
+    INTCON0bits.GIEL = 0;
+    INTCON0bits.IPEN = 0;
+    IVTBASEU = 0x00;
+    IVTBASEH = 0x00;
+    IVTBASEL = 0x08;
+    INTCON0bits.GIEH = 1;
+    INTCON0bits.GIEL = 1;
+    INTCON0bits.IPEN = 1;
 
 InitSysteme();
-dtmf_InitInterrupt();
+
 
 Temperature = 3;
 while (1)
@@ -36297,7 +36307,7 @@ while (1)
           {
 
           }
-# 59 "main.c"
+# 69 "main.c"
     }
 }
 
@@ -36307,15 +36317,16 @@ void InitSysteme(void)
 TRISBbits.TRISB4 = 0;
 TRISBbits.TRISB5 = 0;
 
-void LED_DTMF_LightOn();
-void LED_DTMFOK_LightOn();
+LED_DTMF_LightOn();
+LED_DTMFOK_LightOn();
 
 TMR0_Initialize();
 Drv_Adc_Configure();
 dtmf_Configure();
+dtmf_InitInterrupt();
 
-void LED_DTMF_LightOff();
-void LED_DTMFOK_LightOff();
+LED_DTMF_LightOff();
+LED_DTMFOK_LightOff();
 
 
 }

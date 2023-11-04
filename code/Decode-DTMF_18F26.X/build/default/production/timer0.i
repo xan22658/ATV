@@ -36205,15 +36205,7 @@ extern Uint8_t ui8Compteur;
 void TMR0_Initialize(void)
 {
 
- INTCON0bits.GIEH = 0;
-    INTCON0bits.GIEL = 0;
-    INTCON0bits.IPEN = 0;
-    IVTBASEU = 0x00;
-    IVTBASEH = 0x00;
-    IVTBASEL = 0x08;
-    INTCON0bits.GIEH = 1;
-    INTCON0bits.GIEL = 1;
-    INTCON0bits.IPEN = 1;
+
 
 
     T0CON0bits.EN = 0;

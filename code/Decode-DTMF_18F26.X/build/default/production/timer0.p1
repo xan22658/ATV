@@ -1,23 +1,5 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"5024 ./pic18f26k83.h
-[s S3095 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S3095 . INT0EDG INT1EDG INT2EDG . IPEN GIEL GIE ]
-"5033
-[s S3096 :7 `uc 1 :1 `uc 1 ]
-[n S3096 . . GIEH ]
-"5023
-[u S3094 `S3095 1 `S3096 1 ]
-[n S3094 . . . ]
-"5038
-[v _INTCON0bits `VS3094 ~T0 @X0 0 e@16338 ]
-"5267
-[; ;./pic18f26k83.h: 5267:         unsigned B1TXEN :1;
-[v _IVTBASEU `Vuc ~T0 @X0 0 e@16343 ]
-"5205
-[v _IVTBASEH `Vuc ~T0 @X0 0 e@16342 ]
-"5143
-[v _IVTBASEL `Vuc ~T0 @X0 0 e@16341 ]
-"3982
+"3982 ./pic18f26k83.h
 [s S3057 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S3057 . OUTPS MD16 OUT . EN ]
 "3989
@@ -3139,99 +3121,72 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _TMR0_Initialize ]
 [f ]
-"18
-[; ;timer0.c: 18:  INTCON0bits.GIEH = 0;
-[e = . . _INTCON0bits 1 1 -> -> 0 `i `uc ]
-"19
-[; ;timer0.c: 19:     INTCON0bits.GIEL = 0;
-[e = . . _INTCON0bits 0 5 -> -> 0 `i `uc ]
-"20
-[; ;timer0.c: 20:     INTCON0bits.IPEN = 0;
-[e = . . _INTCON0bits 0 4 -> -> 0 `i `uc ]
 "21
-[; ;timer0.c: 21:     IVTBASEU = 0x00;
-[e = _IVTBASEU -> -> 0 `i `uc ]
-"22
-[; ;timer0.c: 22:     IVTBASEH = 0x00;
-[e = _IVTBASEH -> -> 0 `i `uc ]
-"23
-[; ;timer0.c: 23:     IVTBASEL = 0x08;
-[e = _IVTBASEL -> -> 8 `i `uc ]
-"24
-[; ;timer0.c: 24:     INTCON0bits.GIEH = 1;
-[e = . . _INTCON0bits 1 1 -> -> 1 `i `uc ]
-"25
-[; ;timer0.c: 25:     INTCON0bits.GIEL = 1;
-[e = . . _INTCON0bits 0 5 -> -> 1 `i `uc ]
-"26
-[; ;timer0.c: 26:     INTCON0bits.IPEN = 1;
-[e = . . _INTCON0bits 0 4 -> -> 1 `i `uc ]
-"29
-[; ;timer0.c: 29:     T0CON0bits.EN = 0;
+[; ;timer0.c: 21:     T0CON0bits.EN = 0;
 [e = . . _T0CON0bits 0 4 -> -> 0 `i `uc ]
-"30
-[; ;timer0.c: 30:     T0CON0bits.MD16 = 1;
+"22
+[; ;timer0.c: 22:     T0CON0bits.MD16 = 1;
 [e = . . _T0CON0bits 0 1 -> -> 1 `i `uc ]
-"31
-[; ;timer0.c: 31:     TMR0L = 0xF6;
+"23
+[; ;timer0.c: 23:     TMR0L = 0xF6;
 [e = _TMR0L -> -> 246 `i `uc ]
-"32
-[; ;timer0.c: 32:     TMR0H = 0xC2;
+"24
+[; ;timer0.c: 24:     TMR0H = 0xC2;
 [e = _TMR0H -> -> 194 `i `uc ]
-"34
-[; ;timer0.c: 34:     T0CON0bits.OUTPS = 0b0000;
+"26
+[; ;timer0.c: 26:     T0CON0bits.OUTPS = 0b0000;
 [e = . . _T0CON0bits 0 0 -> -> 0 `i `uc ]
-"35
-[; ;timer0.c: 35:     T0CON1bits.CS = 0b010;
+"27
+[; ;timer0.c: 27:     T0CON1bits.CS = 0b010;
 [e = . . _T0CON1bits 0 2 -> -> 2 `i `uc ]
-"36
-[; ;timer0.c: 36:     T0CON1bits.ASYNC = 1;
+"28
+[; ;timer0.c: 28:     T0CON1bits.ASYNC = 1;
 [e = . . _T0CON1bits 0 1 -> -> 1 `i `uc ]
-"37
-[; ;timer0.c: 37:     T0CON1bits.CKPS = 0b0111;
+"29
+[; ;timer0.c: 29:     T0CON1bits.CKPS = 0b0111;
 [e = . . _T0CON1bits 0 0 -> -> 7 `i `uc ]
-"38
-[; ;timer0.c: 38:     PIR3bits.TMR0IF = 0;
+"30
+[; ;timer0.c: 30:     PIR3bits.TMR0IF = 0;
 [e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
-"39
-[; ;timer0.c: 39:     IPR3bits.TMR0IP = 0;
+"31
+[; ;timer0.c: 31:     IPR3bits.TMR0IP = 0;
 [e = . . _IPR3bits 0 7 -> -> 0 `i `uc ]
-"40
-[; ;timer0.c: 40:     PIE3bits.TMR0IE = 1;
+"32
+[; ;timer0.c: 32:     PIE3bits.TMR0IE = 1;
 [e = . . _PIE3bits 0 7 -> -> 1 `i `uc ]
-"41
-[; ;timer0.c: 41:     T0CON0bits.EN = 1;
+"33
+[; ;timer0.c: 33:     T0CON0bits.EN = 1;
 [e = . . _T0CON0bits 0 4 -> -> 1 `i `uc ]
-"43
-[; ;timer0.c: 43: }
+"35
+[; ;timer0.c: 35: }
 [e :UE 3202 ]
 }
 [v $root$_App_Private_Cmd_Execute_Periodic_Task `(v ~T0 @X0 0 e ]
-"45
-[; ;timer0.c: 45: void __attribute__((picinterrupt(("irq(31)")))) App_Private_Cmd_Execute_Periodic_Task (void)
+"37
+[; ;timer0.c: 37: void __attribute__((picinterrupt(("irq(31)")))) App_Private_Cmd_Execute_Periodic_Task (void)
 [v _App_Private_Cmd_Execute_Periodic_Task `(v ~T1 @X0 1 ef ]
-"46
-[; ;timer0.c: 46: {
+"38
+[; ;timer0.c: 38: {
 {
 [e :U _App_Private_Cmd_Execute_Periodic_Task ]
 [f ]
-"47
-[; ;timer0.c: 47:     if ( PIR3bits.TMR0IF == 1)
+"39
+[; ;timer0.c: 39:     if ( PIR3bits.TMR0IF == 1)
 [e $ ! == -> . . _PIR3bits 0 7 `i -> 1 `i 3204  ]
-"48
-[; ;timer0.c: 48:     {
+"40
+[; ;timer0.c: 40:     {
 {
-"49
-[; ;timer0.c: 49:     ui8Compteur++;
+"41
+[; ;timer0.c: 41:     ui8Compteur++;
 [e ++ _ui8Compteur -> -> 1 `i `uc ]
-"51
-[; ;timer0.c: 51:     PIR3bits.TMR0IF = 0;
+"43
+[; ;timer0.c: 43:     PIR3bits.TMR0IF = 0;
 [e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
-"52
-[; ;timer0.c: 52:     }
+"44
+[; ;timer0.c: 44:     }
 }
 [e :U 3204 ]
-"54
-[; ;timer0.c: 54: }
+"46
+[; ;timer0.c: 46: }
 [e :UE 3203 ]
 }
